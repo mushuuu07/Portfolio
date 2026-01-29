@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mussavir | Portfolio</title>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+  scroll-behavior:smooth;
+}
+
+/* ===== BODY ===== */
+body{
+  background:#0f172a;
+  color:#fff;
+}
+
+/* ===== PAGE 1 ===== */
+#page1{
+  height:100vh;
+  display:flex;
+  flex-direction:column;   /* 👈 IMPORTANT */
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  gap:30px;                /* space between text & button */
+}
+
+
+/* BUTTON */
+.main-btn{
+  padding:18px 50px;
+  font-size:20px;
+  border:none;
+  border-radius:50px;
+  cursor:pointer;
+  background:linear-gradient(90deg,#00f2fe,#4facfe);
+  color:#000;
+  font-weight:bold;
+  animation:pulse 2s infinite;
+  transition:0.3s;
+}
+
+.main-btn:hover{
+  transform:scale(1.15);
+}
+
+/* Button Animation */
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(79,172,254,0.7);}
+  70%{box-shadow:0 0 0 30px rgba(79,172,254,0);}
+  100%{box-shadow:0 0 0 0 rgba(79,172,254,0);}
+}
+
+/* ===== PAGE 2 ===== */
+#page2{
+  min-height:100vh;
+  padding:80px 20px;
+  background:linear-gradient(135deg,#141e30,#243b55);
+  text-align:center;
+}
+
+/* GLASS CARD */
+.card{
+  max-width:800px;
+  height: 1200px;
+  margin:auto;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(12px);
+  padding:40px;
+  border-radius:25px;
+  animation:fadeUp 1.2s ease;
+  padding-top: 10px;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(40px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.card h1{
+  color:#00f2fe;
+  font-size:38px;
+  margin-bottom:10px;
+  padding: 90px;
+}
+
+.card p{
+  font-size:18px;
+  line-height:1.7;
+  margin:20px 0;
+}
+
+/* ===== SKILLS ===== */
+.skills{
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:15px;
+  padding-top: 40px;
+}
+
+.skill{
+  padding:10px 22px;
+  border-radius:10px;
+  background:linear-gradient(135deg,#00f2fe,#4facfe);
+  color:#000;
+  font-weight:bold;
+}
+
+.skill:hover {
+    transition: 0.5s;
+    transform: scale(1.2);
+}
+
+/* ===== FOOTER ===== */
+footer{
+  margin-top:50px;
+  padding-top:30px;
+  border-top:1px solid rgba(255,255,255,0.2);
+}
+
+footer h3{
+  color:#00f2fe;
+  margin-bottom:15px;
+}
+
+.icons{
+  display:flex;
+  justify-content:center;
+  gap:25px;
+  font-size:22px;
+}
+
+.icons a{
+  color:#fff;
+  transition:0.3s;
+}
+
+.icons a:hover{
+  color:#00f2fe;
+  transform:scale(1.2);
+}
+
+/* ===== HERO TEXT ===== */
+.hero-text{
+  font-size:50px;
+  font-weight:700;
+  text-align:center;
+  margin-bottom:30px;
+  line-height:1.3;
+}
+
+/* ===== TYPING NAME EFFECT ===== */
+.typing-name{
+  display:inline-block;
+  margin: -20px;
+  color: #00f2fe;
+  white-space:nowrap;
+  overflow:hidden;
+  border-right:3px solid rgba(255,255,255,0.8);
+  max-width:0;
+  animation:
+    typeName 2.5s steps(8) 0.8s forwards,
+    blinkCursor 0.8s infinite;
+}
+
+/* Typing animation */
+@keyframes typeName{
+  to{ max-width:100%; }
+}
+
+/* Cursor blink */
+@keyframes blinkCursor{
+  50%{ border-color:transparent; }
+}
+
+
+@keyframes typing{
+  to{ max-width:100%; }
+}
+
+@keyframes blink{
+  50%{ border-color:transparent; }
+}
+
+
+
+/* Typing line */
+.typing-line{
+  font-size:26px;
+  font-weight:500;
+  min-height:35px;
+  margin-bottom:30px;
+  color:#e5e7eb;
+}
+
+/* Cursor */
+#typing::after{
+  content:"|";
+  margin-left:5px;
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  50%{ opacity:0; }
+}
+
+
+/* ===== NAME GRADIENT (SMOOTH & PROFESSIONAL) ===== */
+.name{
+  background: linear-gradient(90deg,#38bdf8,#6366f1,#38bdf8);
+  background-size:200% auto;
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  animation:gradientMove 4s linear infinite;
+  transition:0.4s;
+}
+
+/* Gradient movement */
+@keyframes gradientMove{
+  to{ background-position:200% center; }
+}
+
+/* ===== HOVER EFFECT (SUBTLE) ===== */
+.name:hover{
+  transform:scale(1.05);
+  letter-spacing:1px;
+}
+
+/* ===== SUBTLE BACKGROUND ANIMATION ===== */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background: linear-gradient(
+    120deg,
+    rgba(56,189,248,0.12),
+    rgba(99,102,241,0.12),
+    rgba(56,189,248,0.12)
+  );
+  background-size:300% 300%;
+  animation:bgMove 18s ease infinite;
+  z-index:-1;
+}
+
+@keyframes bgMove{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
+
+
+.card{
+  opacity:0;
+  transform:translateY(40px);
+  transition:1s ease;
+}
+.card.show{
+  opacity:1;
+  transform:translateY(0);
+}
+
+/* ===== CERTIFICATES ===== */
+.cert-title{
+  margin-top:40px;
+  margin-bottom:20px;
+  color:#38bdf8;
+}
+
+.certificates{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+}
+
+.cert{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 18px;
+  background:rgba(255,255,255,0.08);
+  border-radius:30px;
+  font-size:15px;
+  transition:0.3s ease;
+}
+
+.cert i{
+  color:#38bdf8;
+}
+
+.cert:hover{
+  background:#38bdf8;
+  color:#000;
+  transform:translateY(-4px);
+}
+
+.cert:hover i{
+  color:#000;
+}
+
+
+.profile-card {
+    position: relative;
+    padding-top: 80px;
+  max-width: 600px;
+  margin: auto;
+  padding: 30px;
+  text-align: center;
+  background: #1f2a33;
+  border-radius: 20px;
+  color: #ffffff;
+}
+
+.profile-pic {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 4px solid #29e0e0;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  margin: 20px auto;
+  padding: 50px;
+
+}
+
+.profile-pic img{
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.profile-card h1 {
+  color: #29e0e0;
+  margin-bottom: -65px;
+  font-size: 35px;
+  padding-right: 20px;
+}
+
+.profile-card h3 {
+  font-weight: normal;
+  margin-bottom: 15px;
+   display: flex;
+  justify-content: start;
+}
+
+.details p {
+  margin: 6px 0;
+  font-size: 15px;
+   display: flex;
+  justify-content: start;
+}
+
+.details a {
+  color: #29e0e0;
+  text-decoration: none;
+  display: flex;
+  justify-content: start;
+}
+
+.details a:hover {
+  text-decoration: underline;
+}
+
+
+
+</style>
+</head>
+
+<body>
+    
+ 
+<section id="page1">
+  <h1 class="hero-text">
+    <span class="typing1">Hello Developers,</span>
+    Myself <br><span class="typing-name">Mussavir.</span>
+  </h1>
+  <h2 class="typing-line">
+  <span id="typing"></span>
+</h2>
+  <button class="main-btn" onclick="goNext()">Know About Me</button>
+</section>
+
+
+
+
+
+
+<!-- PAGE 2 -->
+<section id="page2">
+  <div class="card">
+    <div class="profile-card">
+  <img src="img2.jpeg" alt="Profile Photo" class="profile-pic">
+
+  <h1>Mussavir Ul Haq</h1><br><br>
+  <h3>Computer Science Student</h3>
+
+  <div class="details">
+    <p><strong>Age: </strong> 19</p>
+    <p>
+      <strong>Email:</strong>
+      <a href="mailto:mussavir@gmail.com">
+        mussavir@gmail.com
+      </a>
+    </p>
+    <p><strong>Location:</strong> Bangalore, India</p>
+    <p><strong>Role:</strong> Frontend Web Developer</p>
+  </div>
+</div>
+
+    <p>
+      I am a passionate frontend developer who enjoys creating modern,
+      colorful and interactive websites. I focus on clean UI, smooth
+      animations and responsive layouts using HTML, CSS and JavaScript.
+    </p><br>
+
+    <h3 style="color:#00f2fe;
+    margin-top:35px;
+    ">Skills</h3>
+    <div class="skills">
+      <div class="skill">HTML</div>
+      <div class="skill">CSS</div>
+      <div class="skill">JavaScript</div>
+      <div class="skill">UI Design</div>
+      <div class="skill">Responsive Design</div>
+      <div class="skill">Git/GitHub</div>
+      <div class="skill">Office Management</div>
+    </div>
+
+    <h3 class="cert-title">Certificates</h3>
+
+<div class="certificates">
+  <div class="cert">
+    <i class="fas fa-certificate"></i>
+    <span>JavaScript - Synopsys</span>
+  </div>
+
+  <div class="cert">
+    <i class="fas fa-certificate"></i>
+    <span>HTML & CSS Fundamentals</span>
+  </div>
+
+  <div class="cert">
+    <i class="fas fa-certificate"></i>
+    <span>JavaScript Basics</span>
+  </div>
+
+  <div class="cert">
+    <i class="fas fa-certificate"></i>
+    <span>Full-Stack Development (Learning)</span>
+  </div>
+</div>
+
+    <!-- FOOTER -->
+    <footer>
+      <h3>Contact & Social</h3>
+      <div class="icons">
+  <!-- Email -->
+  <a href="mailto:mussavirulhaq@gmail.com?subject=Portfolio%20Contact&body=Hi%20Mussavir,%0A%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20connect."
+     title="Email Me">
+    <i class="fas fa-envelope"></i>
+  </a>
+
+  <!-- WhatsApp -->
+  <a href="https://wa.me/918431355803?text=Hi%20Mussavir,%20I%20saw%20your%20portfolio"
+     target="_blank"
+     title="WhatsApp Me">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- Phone Call -->
+  <a href="tel:+918431355803" title="Call Me">
+    <i class="fas fa-phone"></i>
+  </a>
+
+  <!-- GitHub -->
+  <a href="https://github.com/mushuuu07" target="_blank" title="GitHub">
+    <i class="fab fa-github"></i>
+  </a>
+
+  <!-- LinkedIn -->
+  <a href="https://linkedin.com/in/" target="_blank" title="LinkedIn">
+    <i class="fab fa-linkedin"></i>
+  </a>
+</div>
+
+    </footer>
+  </div>
+</section>
+
+
+
+
+<script>
+function goNext(){
+  document.getElementById("page2")
+    .scrollIntoView({behavior:"smooth"});
+}
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      entry.target.classList.add("show");
+    }
+  });
+},{ threshold:0.3 });
+
+observer.observe(document.querySelector(".card"));
+
+const texts = [
+  "I'm a Programmer",
+  "I'm a Web Developer",
+  "I'm a Tech Enthusiast",
+  "I'm a Problem Solver"
+];
+
+let index = 0;
+let charIndex = 0;
+const typingSpeed = 80;
+const eraseSpeed = 50;
+const delayBetween = 1500;
+
+const typingElement = document.getElementById("typing");
+
+function typeText(){
+  if(charIndex < texts[index].length){
+    typingElement.textContent += texts[index].charAt(charIndex);
+    charIndex++;
+    setTimeout(typeText, typingSpeed);
+  }else{
+    setTimeout(eraseText, delayBetween);
+  }
+}
+
+function eraseText(){
+  if(charIndex > 0){
+    typingElement.textContent = texts[index].substring(0, charIndex - 1);
+    charIndex--;
+    setTimeout(eraseText, eraseSpeed);
+  }else{
+    index = (index + 1) % texts.length;
+    setTimeout(typeText, typingSpeed);
+  }
+}
+
+typeText();
+
+</script>
+
+
+</body>
+</html>
